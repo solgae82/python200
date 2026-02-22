@@ -28,7 +28,7 @@ isFalse = False
 
 list = [10,20,30] #리스트
 
-tuple = ('하늘','땅') #튜플
+tuple = ('하늘','땅') #튜플, 값을 변경할 수 없는 Immutable
 
 #문자열
 string = "Hello"
