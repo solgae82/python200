@@ -1,10 +1,6 @@
 def report(): 
     print('이 부분은 리포트 본문입니다.')
 
-def makeNumber(): 
-    for i in range(3):
-        print(i)
-
 report()
 """
 출력: 

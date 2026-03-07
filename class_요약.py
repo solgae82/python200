@@ -1,14 +1,21 @@
+
+#--------- 1. 클래스 기본 구조
 class User: 
+
+    # 생성자 , self(자바의 this와 동일)
     def __init__(self, name, age): 
         self.name = name
         self.age = age
     
+    # 첫번째 매개변수로 반드시 self 넣어줘야 함.
     def introduce(self): 
         return f'이름은 \'{self.name}\' / 나이는 {self.age}살 입니다'
     
 u = User("kim", 30)
-print(u.introduce())
+print(u.introduce()) # 이름은 'kim' / 나이는 30살 입니다
 
+
+#--------- 2. 클래스 변수 vs 인스턴스 변수
 class User: 
     company = "지오스토리"
     def __init__(self):
@@ -18,33 +25,21 @@ class User:
         return 'Hi'
 
 u = User()
-print(u.intro()) # 인스턴스 변수
-print(User.company) #클래스 변수
+print(u.intro()) # Hi  (인스턴스 변수)
+print(User.company) # 지오스토리 (클래스 변수)
 
+
+#--------- 3. 접근제어 (완전한 캡슐화 아님, 신뢰기반 파이썬 문화)
 class User: 
     def __init__(self):
-            self._name = "kim"   # protected 관례
-            self.__age = 30      # name mangling , 인터프리터가 _User__age 로 변경함.
+            self._name = "kim"   # protected 관례 ("건들지 마세요" 관례)
+            self.__age = 30      # name mangling , 인터프리터가 _User__age 로 변경함. 상속시 덮어쓰기 막기 목적.
 
-# Getter / Setter 
-"""
-파이썬의 @age.setter는 @property로 정의된 게터(getter) 메소드와 함께 사용하여 
-클래스 속성(나이)에 값을 저장하기 전 유효성 검사 등 논리적 로직을 추가하는 캡슐화 방식입니다. 
-이를 통해 p.age = -5와 같은 잘못된 데이터 입력을 제어할 수 있습니다. 
 
-작동 방식 및 예제:
-@property (getter): age 값을 읽을 때 호출. 내부적으로 _age 변수 사용.
-@age.setter (setter): age 값을 변경(p.age = 20)할 때 호출되어 검증 후 _age에 할당. 
-
-핵심 포인트:
-_age (Hidden Variable): 실제 데이터는 _age에 저장하며외부에서는 age 프로퍼티를 통해 접근하도록 유도합니다.
-데이터 검증: 나이 설정 시 0보다 작은 값이 들어오면 에러를 발생시켜 안전한 데이터 관리가 가능합니다.
-사용 편의성: 메소드임에도 불구하고 p.age = 30과 같이 일반 필드처럼 값을 할당할 수 있습니다. 
-
-"""
+#--------- 4. Getter / Setter 
 class Person:
     def __init__(self, age):
-        self.age = age  # setter가 호출됨
+        self._age = age  
 
     @property
     def age(self):
@@ -57,10 +52,73 @@ class Person:
             raise ValueError("나이는 음수가 될 수 없습니다.")
         self._age = value
 
-p = Person(20)
-p.age = 30  # OK , age setter 사용
-# p.age = -5  # ValueError 발생
-print(p.age) # age()하면 에러, 
-#age(self) 호출
-#30
+    @age.deleter
+    def age(self): 
+        print('_age=None 됨')
+        self._age = None
 
+p = Person(20)
+
+# @property 호출, getter 역할
+# print(p.age()) , 에러
+print(p.age) # 20, 내부 '_age' 값 호출
+
+# @age.setter 사용
+# p.age(30) , 에러
+p.age = 30  # OK ,
+# p.age = -5  # ValueError 발생
+
+#age.deleter 호출
+del p.age # _age=None 됨
+print(type(p._age)) #<class 'NoneType'>
+
+
+#--------- 5. 클래스 메서드 / static 메서드
+class User:
+
+    @classmethod
+    def create_default(cls):
+        return cls("default")
+
+    @staticmethod
+    def hello():
+        return "hello"
+    
+"""
+| Java           | Python        |
+| -------------- | ------------- |
+| static method  | @staticmethod |
+| static factory | @classmethod  |
+
+"""
+
+
+#--------- 6. 상속
+class Person:
+    def greet(self):
+        return "Hello"
+
+class User(Person):
+    def greet(self):
+        return super().greet() + " User"
+    
+u = User()
+print(u.greet())  # Hello User
+
+"""
+✔ extends 없음
+✔ super() 동일
+"""
+
+
+#--------- 7. 다중 상속 (주의)
+class A: pass
+class B: pass
+class C(A, B): pass
+
+"""
+✔ 가능
+✔ MRO(Method Resolution Order) 이해 필요
+
+Java 개발자라면 “신중히 사용” 추천
+"""
