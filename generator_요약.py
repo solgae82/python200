@@ -2,7 +2,9 @@
 generator : iterator를 생성해주는 함수, 함수안에 yield 키워드를 사용함
 
 yield 키워드는 Python에서 제너레이터(Generator) 함수를 정의할 때 사용되는 특별한 키워드입니다. 
-제너레이터는 이터레이터(Iterator)의 한 종류로, 값을 한 번에 모두 메모리에 저장하는 대신, 필요할 때마다 하나씩 생성하여 반환합니다.
+제너레이터는 이터레이터(Iterator)의 한 종류로, 값을 한 번에 모두 메모리에 저장하는 대신, 
+필요할 때마다 하나씩 생성하여 반환합니다.
+
 출처: https://bcho.tistory.com/1460 [조대협의 블로그:티스토리]
 """
 
@@ -26,16 +28,6 @@ print(gen_1 == gen_2) # False
 print(next(gen_1)) # 1
 print(next(gen_2)) # 1
 print(next(gen_1)) # 2
-
-# 리스트 컴프리헨션
-squares_list = [x**2 for x in range(10)] #[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-print(squares_list)
-
-# 제너레이터 표현식
-squares_gen = (x**2 for x in range(10))
-print(squares_gen) #제네레이터 객체, <generator object <genexpr> at 0x000002105F888E10>
-for i in squares_gen: 
-    print(i, end='/') #0/1/4/9/16/25/36/49/64/81/
 
 
 print('--------')
