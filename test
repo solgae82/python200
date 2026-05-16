@@ -1,0 +1,17 @@
+
+# 짝 지을 수 있는 요소만 튜플을 만든다
+male =['수퍼맨', '이몽룡', '로미오','다키프리오',"마당쇠"]
+female=['원더우먼','성춘향','줄리엣']
+couples = zip(male, female, strict=True)
+
+# for i in couples: 
+#     try:
+#         print(i)
+#     except:
+#         print('에러')
+
+try:
+    for i in couples:
+        print(i)
+except ValueError:
+    print('에러: 남녀 인원수가 맞지 않습니다.')

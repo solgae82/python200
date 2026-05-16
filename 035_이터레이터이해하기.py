@@ -24,3 +24,12 @@ iter3 = iter(listData)
 for i in iter3:
     print(i , end="") # 123
 
+# 한번 반복한 이터레이터는 다시 반복 못 한다
+for i in iter3:
+    print(i , end=",") # 출력 안함.
+
+print()
+# 다시 이터레이터로 만들어야한다
+iter4 = iter(listData)
+for i in iter4:
+    print(i , end="-") # 1-2-3-
