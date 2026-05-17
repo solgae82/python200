@@ -35,10 +35,11 @@
 
 # 리스트 컴프리헨션
 squares_list = [x**2 for x in range(10)] 
+print(type(squares_list)) # <class 'list'>
 print(squares_list) #[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 
 # 제너레이터 표현식
 squares_gen = (x**2 for x in range(10))
-print(squares_gen) #제네레이터 객체, <generator object <genexpr> at 0x000002105F888E10>
+print(type(squares_gen)) # <class 'generator'>
 for i in squares_gen: 
     print(i, end='/') #0/1/4/9/16/25/36/49/64/81/

@@ -1,4 +1,5 @@
 #함수 매개변수와 리턴값에 타입애노테이션으로 자료형을 명시할 수 있다(강제사항은 아니다)
+# dict[str,int] : 제네릭 문법
 
 def setLevel(character: str, level: int) -> dict[str,int]:
     return {character:level}
