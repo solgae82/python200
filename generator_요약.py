@@ -38,13 +38,13 @@ def chain_generator(gen1, gen2):
     yield from gen1
     yield from gen2
 
-gen_1 = (i for i in range(3))
-gen_2 = (i for i in range(3,6))
+gen_1 = (i for i in range(3))   # 제네레이터 표현식 , 0~2
+gen_2 = (i for i in range(3,6)) # 제네레이터 표현식 , 3~5
 
 chain = chain_generator(gen_1, gen_2)
 
 for val in chain: 
-    print(val, end='/') # 0/1/2/3/4/5/
+    print(val, end='/') # 0/1/2/3/4/5/ , gen_1 출력 후 gent_2 출력
 
 
 print('--------')
@@ -58,7 +58,8 @@ def make_pizza():
     print("피자 굽기")
     yield "완성된 피자"  # 피자 완성, 호출자에게 피자를 줌
 
-pizza_gen = make_pizza()
+pizza_gen = make_pizza() # 제네레이터 반환
+print(type(pizza_gen)) # <class 'generator'>
 
 step1 = next(pizza_gen)  # "피자 도우 준비" 출력, "도우" 반환, 실행 중단
 print(f"지금까지: {step1}") # 지금까지: 도우
