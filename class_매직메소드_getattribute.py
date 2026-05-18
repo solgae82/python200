@@ -1,3 +1,6 @@
+
+# __getattribute__ 메소드 , 속성 접근 처리 전 Hooking 느낌.
+
 class MyClass:
     def __init__(self, name):
         self.name = name

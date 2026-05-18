@@ -46,10 +46,10 @@ c.hello() # A hello
 앞에서부터 탐색하기 때문. class C(A, B) : A -> B
 즉 먼저 찾은 메서드 사용
 이 순서를 'MRO(Method Resolution Order)' 라고 함
-
 """
 # 다중 클래스 탐색 순서 보기
-print(C.__mro__) #(<class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>)
+print(C.__mro__) 
+#(<class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>)
 
 #-------- super() 사용
 class A:
@@ -65,7 +65,7 @@ class C(A, B):
         super().hello()
 
 c = C()
-c.hello() # A
+c.hello() # A , (MRO)
 
 # 실무에서 많이 쓰는 안전 패턴
 class A:
@@ -83,14 +83,17 @@ class Base:
         print("Base")
 
 class C(A, B, Base):
-    pass
+    def hello(self): 
+        print("C Main")
+        super().hello()
 
 c = C()
-c.hello()
+c.hello() 
 """
 C → A → B → Base
 
 출력: 
+C Main
 A start
 B start
 Base
