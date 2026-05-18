@@ -90,7 +90,7 @@ class C(A, B, Base):
 c = C()
 c.hello() 
 """
-C → A → B → Base
+C → A → B → Base (마치 클래스 생성자 체인같은 느낌)
 
 출력: 
 C Main

@@ -41,10 +41,10 @@ class Tclass:
 
 t = Tclass()
 
-# t.test() # 에러,파이썬 실행기가 인수 1개를 무조건 넣는데, 선언엔 없으므로..
+# t.test() # 에러,파이썬 실행기가 인스턴스 인수 1개를 무조건 넣는데, 선언엔 없으므로..
 # TypeError: Tclass.test() takes 0 positional arguments but 1 was given
 
-Tclass.test() # test
+Tclass.test() # test , 이 형식으로만 사용 가능.
 
 """
 파이썬에서는 클래스 안에 메소드 첫벗째 인자로 self가 기본.
@@ -54,7 +54,7 @@ Tclass.test() # test
 """
 
 """
-인스턴스/클래스 인자 없이 test()로 선언하는 방법이 있다
+인스턴스/클래스 인자 없이 인수없는 test()로 선언하는 방법이 있다
 @staticmethod 데코레이터로 확장 (나중에 따로 정리 할 것이다)
 (클래스 기본이라기 보다는 독립 함수 느낌)
 """
