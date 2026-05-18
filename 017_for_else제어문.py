@@ -6,14 +6,21 @@ else:
 """
 
 for x in [1,2,3]: 
-    print(x, end="") #123
+    print(x, end="") 
 else: 
     print()
-    print('모두 실행') #모두 실행
+    print('모두 실행') 
+"""
+123
+모두 실행
+"""
 
 
 for x in [1,2,3]: 
     print(x , end='') #12
     if x == 2: break
 else: 
-    print('모두 실행') #실행 안됨
+    print('모두 실행') #실행 안됨, 중간에 끊겼으니
+"""
+12
+"""
