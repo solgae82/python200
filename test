@@ -4,7 +4,7 @@ male =['수퍼맨', '이몽룡', '로미오','다키프리오',"마당쇠"]
 female=['원더우먼','성춘향','줄리엣']
 couples = zip(male, female, strict=True)
 
-# for i in couples: 
+# for i in couples:  # <= 여기에서 에러이므로 예외처리할 수 없다.
 #     try:
 #         print(i)
 #     except:
