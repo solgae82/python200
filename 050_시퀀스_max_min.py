@@ -1,4 +1,6 @@
 
+# 시퀀스 자료형에서 max(), min() 사용하기
+
 n_list = [32,0,99,48]
 print(max(n_list)) # 99 
 print(min(n_list)) # 0
