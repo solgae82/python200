@@ -12,9 +12,15 @@ print(sorted(tuple_data)) # ['바나나', '사과', '참외']
 str_data = 'I love python'
 print(sorted(str_data)) # [' ', ' ', 'I', 'e', 'h', 'l', 'n', 'o', 'o', 'p', 't', 'v', 'y']
 
-# 딕셔너리는 키 정렬된 리스트만 반환
-population = {'박씨':1899, '김씨':2834, '이씨':2288}
+# 딕셔너리는 키 기준(디폴트) 정렬된 리스트 반환
+population = {'박씨':1, '김씨':3, '이씨':2}
 print(sorted(population)) # ['김씨', '박씨', '이씨']
+
+# 딕셔너리 값 기준 정렬된 리스트 반환
+print(sorted(population.items() , key=lambda x: x[1])) # [('박씨', 1), ('이씨', 2), ('김씨', 3)]
+
+# 딕셔너리 값 기준 정렬된 딕셔너리 반환
+print(dict(sorted(population.items() , key=lambda x: x[1]))) # {'박씨': 1, '이씨': 2, '김씨': 3}
 
 # set 자료형 정렬된 리스트 반환
 set_data = {'야구','축구','농구'}

@@ -29,12 +29,14 @@ print()
 
 #딕셔너리
 dict_data = {1:'한글',2:'영어'}
-for k,v in dict_data.items():
+dic_items = dict_data.items()
+print(type(dic_items)) # <class 'dict_items'>
+for k,v in dic_items:
     print(k,':',v , sep='', end ='|') # 1:한글|2:영어|
 
 print()
 
-for dic in dict_data.items(): #튜플 반환
+for dic in dict_data.items():
     print(dic , end ='|') #(1, '한글')|(2, '영어')|
 
 print()
