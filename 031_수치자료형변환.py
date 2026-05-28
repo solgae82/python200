@@ -29,6 +29,11 @@ print(type(intData), intData,sep=',') # <class 'int'>,175
 intData = int('AF', base=16)
 print(type(intData), intData,sep=',') # <class 'int'>,175
 
+s_num = '11';
+print(type(s_num), type(int(s_num)) , int(s_num)) # <class 'str'> <class 'int'> 11
+print(int('a',base=16))      # 16진수 a => 10
+print(int('1111',2))    # 2진수 1111 => 15
+print(int('17', 8))     # 8진수 17 => 15
 
 # 실수형 변환
 

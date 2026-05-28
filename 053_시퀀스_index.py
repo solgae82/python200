@@ -1,5 +1,8 @@
 
 # 자료 위치(정수) 반환하기
+# 문자열 뿐만 아니라 시퀀스 자료등에 사용가능
+# 문자열 전용 index() 함수도 비슷한 역할을 한다
+# 값이 없을때 ValueError 예외 발생
 
 str_data = "A lot of things occur each day! every day!"
 pos = str_data.index('lot') 
