@@ -47,7 +47,7 @@ print(b_str.decode('utf-8')) # 파이썬
 str_data = bytes('Hello','utf-8').hex()
 print(str_data) # 48656c6c6f
 
-byte_data = bytes.fromhex('48656c6c6f')
+byte_data = bytes.fromhex('48656c6c6f') # 48656c6c6f 또는  (공백 구분자 가능=> 48 65 6c 6c 6f)
 print(byte_data) # b'Hello'
 
 str_data = bytes('Hello','utf-8').hex('-')
