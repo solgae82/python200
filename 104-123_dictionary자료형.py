@@ -79,7 +79,7 @@ del p['서울']
 print(population) # {'서울': 100, '부산': 50}
 print(p) # {'부산': 50}
 
-# items() => [('key','value)]
+# items() => dict_items([('key','value')])
 population = {'서울':100, '부산':50}
 p_items = population.items()
 print(type(p_items)) # <class 'dict_items'>
@@ -96,5 +96,22 @@ for k,v in p_items:
 del population['서울'] # 원본 삭제
 print(population) # {'부산': 50}
 print(p_items) # dict_items([('부산', 50)]) , items()객체도 변한다
+
+# key() => dict_keys(['키값',..])
+
+population = {'서울':100, '부산':50}
+p_keys = population.keys()
+print(type(p_keys)) # <class 'dict_keys'>
+print(p_keys) # dict_keys(['서울', '부산'])
+
+for v in p_keys: 
+    print(v , end ='/') # 서울/부산/
+
+print()
+
+# keys() 객체와 원본 객체는 서로 연관 반영 된다.
+del population['부산']
+print(population) #{'서울': 100}
+print(p_keys) # dict_keys(['서울'])
 
 
