@@ -3,9 +3,11 @@
 
 tuple_data = 1, "two", '셋'
 print(tuple_data) # (1, 'two', '셋')
+print(tuple_data[1]) # two
 
 tuple_data = (1, "two", '셋')
 print(tuple_data) # (1, 'two', '셋')
+print(tuple_data[2]) # 셋
 
 # 변수 분기
 x,y,z = tuple_data

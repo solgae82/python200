@@ -19,6 +19,11 @@ print(n_list) # ['태양', '목성', '천왕성']
 n_list.remove('천왕성')
 print(n_list) # ['태양', '목성']
 
+# 중복 요소가 있을때는 가장 먼저 발견된 요소만 삭제
+n_list = ['태양', '지구', '목성', '지구']
+n_list.remove('지구')
+print(n_list) #['태양', '목성', '지구']
+
 # 모든 요소 삭제
 # del n_list[:] # == n_list.clear()
 n_list.clear()
@@ -41,22 +46,34 @@ n_list = ['태양', '지구', '목성']
 n_list.insert(1,'금성')
 print(n_list) # ['태양', '금성', '지구', '목성']
 
-# 요소값 추출(반환)
+# 요소 인덱스 반환
+n_list = ['태양', '금성', '지구', '목성']
+print('지구index=>', n_list.index('지구')) # 지구index=> 2
+
+# 요소값 추출(마지막 자료 추출 후 자료구조 재조정)
 last_pop = n_list.pop()
 print(last_pop, n_list) # 목성 ['태양', '금성', '지구']
 
+# 요소값 추출(인덱스로 추출 후 자료구조 재조정)
 v_pop = n_list.pop(n_list.index('금성'))
 print(v_pop , n_list) # 금성 ['태양', '지구']
 
-# 요소 역순 변환
+# 요소값 추출 반환, [index], [index:], [[index:end_index]
+f_list = ['사과','배','수박','참외']
+print(f_list[1]) # 배
+print(f_list[1:]) # ['배', '수박', '참외']
+print(f_list[1:2]) # ['배']
+print(f_list[1:3]) # ['배', '수박']
+
+# 요소 역순 변환 (현재 자료구조 순서 역순 변경)
 n_list = ['태양', '지구', '목성']
 n_list.reverse()
 print(n_list) # ['목성', '지구', '태양']
 
-# 요소 정렬
+# 요소 정렬 (현재 자료구조 오름차순 정렬 변경)
 n_list = ['태양','금성', '지구', '목성']
 n_list.sort() # 오름차순
 print(n_list) # ['금성', '목성', '지구', '태양']
 
-n_list.sort(reverse=True) # 내림차순
+n_list.sort(reverse=True) # 정렬 역순으로 변경 == reverse() 같다
 print(n_list) # ['태양', '지구', '목성', '금성']
