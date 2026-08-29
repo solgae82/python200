@@ -72,8 +72,9 @@ print(n_list) # ['목성', '지구', '태양']
 
 # 요소 정렬 (현재 자료구조 오름차순 정렬 변경)
 n_list = ['태양','금성', '지구', '목성']
-n_list.sort() # 오름차순
+n_list.sort() # 오름차순 정렬
 print(n_list) # ['금성', '목성', '지구', '태양']
 
-n_list.sort(reverse=True) # 정렬 역순으로 변경 == reverse() 같다
+n_list = ['태양','금성', '지구', '목성']
+n_list.sort(reverse=True) # 내림차순 정렬
 print(n_list) # ['태양', '지구', '목성', '금성']
