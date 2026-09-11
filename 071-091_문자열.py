@@ -107,16 +107,16 @@ import sys
 # 현재 테스트는 파이썬 3.12 버전임.
 
 str_data = 'python'
-print(f"글자 수: {len(str_data)}글자") # 글자 수: 6글자
+print(f"(python)글자 수: {len(str_data)}글자") # 글자 수: 6글자
 print(f"실제 메모리 총 크기: {sys.getsizeof(str_data)} 바이트") # 실제 메모리 총 크기: 47 바이트
 
 str_data = 'pyth한글'
+print(f"(pyth한글)글자 수: {len(str_data)}글자") # (pyth한글)글자 수: 6글자 <= 인간은 이렇게만 인식하면 됨.
 print(f"실제 메모리 총 크기: {sys.getsizeof(str_data)} 바이트") #실제 메모리 총 크기: 70 바이트
 
 str_data = 'pyth😀😁'
+print(f"(pyth😀😁)글자 수: {len(str_data)}글자") # (pyth😀😁)글자 수: 6글자
 print(f"실제 메모리 총 크기: {sys.getsizeof(str_data)} 바이트") # 실제 메모리 총 크기: 84 바이트
-
-print(len('pyth한글')) # 6 <= 인간은 이렇게만 인식하면 됨.
 
 
 str_data = '파이썬'
@@ -142,7 +142,7 @@ byte_data = str_data.encode('CP949')
 print(byte_data ,'/' , len(byte_data)) # b'\xc6\xc4\xc0\xcc\xbd\xe3' / 6
 
 for k,v in enumerate(byte_data): 
-    print(k, '=>', v) # v 는 UTF로 인코딩된 바이너리(byte) 값을 보여줌.
+    print(k, '=>', v) # v 는 CP949로 인코딩된 바이너리(byte) 값을 보여줌.
 '''
 0 => 198
 1 => 196
