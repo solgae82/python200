@@ -1,0 +1,14 @@
+-- 이터러블 함수들
+filter map max min sum list zip all any enumerate reversed sorted
+
+-- 리스트
+list[0] , list.append(), list.insert(),list[0]='3', list.remove(),list.clear(),list.copy(),list.extend(),
+list.index(), list.pop(), list.reverse(), list.sort()
+
+-- 딕셔너리
+dic = {'boy':'소년'}
+dic.get('boy'), dic['girl']='소녀', dic['boy']='청소년', del, clear(), pop('소녀'), popitem(), update(),
+keys(), values(), items() , setdefault()
+
+-- 셋 
+s.add(), s.remove(), s.discard(), clear(), update(), ,clear(),기타집합메소드들()
