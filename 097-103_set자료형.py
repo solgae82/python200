@@ -42,8 +42,9 @@ print(fruits) # {'오렌지', '배', '바나나'}
 # 요소 제거
 fruits = {'사과', '배', '바나나','딸기'}
 print(fruits) # {'오렌지', '딸기', '배', '바나나'}
-fruits.discard('딸기') # {'오렌지', '배', '바나나'}
-print(fruits)
+fruits.discard('딸기') 
+fruits.discard('딸기') # 요소 없어도 에러 안남
+print(fruits) # {'오렌지', '배', '바나나'}
 
 fruits.discard('딸기') # 없어도 에러 안남.
 print(fruits) # {'오렌지', '배', '바나나'}
