@@ -17,7 +17,25 @@ print(p, s) # 이틀 {'하루'} 또는 하루 {'이틀'}
 s.clear()
 print(s) # set()
 
-ls = [1,2]
+s = {'하루','이틀','삼일'}
+s.update(('1','2','3'),{'k1':'이종격투기', 'pride':'2세대'},[401,402])
+print(s) # {'k1', '2', '삼일', 'pride', '3', '1', '하루', '이틀', 401, 402}
 
-v = ls.pop(0)
-print(v)
+
+# 집합 연산
+set1 = set('abc')
+set2 = set('bcdef')
+
+v = set1.union(set2)
+print(v) # {'d', 'a', 'c', 'e', 'b', 'f'}
+
+v = set1.difference(set2)
+print(v) #{'a'}
+
+v = set2.difference(set1)
+print(v) # {'f', 'e', 'd'}
+
+v = set1.intersection(set2)
+print(v) # {'c', 'b'}
+
+
