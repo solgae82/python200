@@ -66,9 +66,10 @@ is_badman: bool = False
 
 #리스트 
 booklist: list = ['삼국지', '수호지', '초한지']
+booklist: list[str] = ['삼국지', '수호지', '초한지']
 
-#튜플
-island: tuple[str, float, float] = ('독도', 131.52, 37.14)
+#튜플 
+island: tuple[str, float, float] = ('독도', 131.52, 37.14) # tuple[] 이다, tuple() 아니고
 
 #딕셔너리
 top4_familyname: dict[str,int] = {'김씨':1, '이씨':2, '박씨':3, '나씨':4}
