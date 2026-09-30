@@ -134,7 +134,7 @@ r_keys = reversed(population) # 키 값 기준으로 역순 반환
 print(type(r_keys)) # <class 'dict_reversekeyiterator'>
 print(list(r_keys)) # ['부산', '대전', '서울']
 
-# pop()
+# pop('키')
 population = {'서울':100, '대전':45, '부산':50}
 # p_value = population.pop('인천') #  키 값 없으면 에러, KeyError: '인천'
 # p_value = population.pop() # 인수 없으면 에러, TypeError: pop expected at least 1 argument, got 0
