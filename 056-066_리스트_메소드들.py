@@ -68,7 +68,7 @@ n_list = ['태양', '지구', '목성']
 c_list = n_list.copy()
 print(c_list) # ['태양', '지구', '목성']
 
-# 리스트 확장 , extend()
+# 리스트 확장 , extend(iterable)
 n_list = ['태양', '지구', '목성']
 c_list = ['태양', '지구', '목성']
 n_list.extend(c_list)
