@@ -1,12 +1,7 @@
-population = {'서울':100, '대전':45}
-new_dict = {'대전':55, '부산':50}
-# population.update(new_dict) # population |= new_dict 와 같다
-population |= new_dict
-print(population) # {'서울': 100, '대전': 55, '부산': 50}
+# 요소 추가(끼워넣기), insert(인덱스, 값)
+n_list = ['태양', '지구', '목성']
+n_list.insert(1,'금성')
+print(n_list) # ['태양', '금성', '지구', '목성']
 
-d = {"boy": "소년"} # 예제
-#d['boy2'] = '소녀'
-#d.update(boy='소녀',{'boy2':'소년'})
-d.update({'boy1':'소년'})
-#d.setdefault('boy','소녀')
-print(d)
+n_list.insert(100,'추가')
+print(n_list)
